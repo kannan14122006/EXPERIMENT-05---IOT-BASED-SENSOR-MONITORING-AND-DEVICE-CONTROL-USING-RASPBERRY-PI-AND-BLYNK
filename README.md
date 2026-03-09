@@ -1,4 +1,4 @@
- # EXPERIMENT-05-IOT BASED SENSOR MONITORING AND DEVICE CONTROL USING RASPBERRY PI AND BLYNK-
+ # EXPERIMENT-05-IOT BASED SENSOR MONITORING AND DEVICE CONTROL USING RASPBERRY PI AND BLYNK
 
 ---
 
@@ -10,28 +10,36 @@
 ---
 
 ## **AIM:**  
-To interface an **MPU6050 6-Axis Accelerometer & Gyroscope Sensor** with the **Raspberry Pi Pico** and display the sensor readings using MicroPython.
+To interface **IR and LDR sensors** with **Raspberry Pi 4** to monitor sensor values in the Blynk mobile application and control output devices such as **LED, buzzer, and relay** through the **Blynk platform**.
 
 ---
 
 ## **APPARATUS REQUIRED:**  
-1. Raspberry Pi Pico  
-2. MPU6050 6-Axis Accelerometer & Gyroscope Sensor  
-3. Jumper Wires  
-4. Breadboard  
-5. USB Cable  
-6. Computer with Thonny IDE  
+1.	Raspberry Pi 4
+2.	IR Sensor Module
+3.	LDR Sensor Module
+4.	Relay Module
+5.	Buzzer
+6.	LED
+7.	Resistors (220Ω)
+8.	Breadboard
+9.	Connecting Wires
+10.	Power Supply
+11.	Wi-Fi Internet Connection
+12.	Blynk Mobile Application
+13. Computer with Thonny IDE  
 
 ---
 
 ## **THEORY:**  
-### **About Raspberry Pi Pico:**  
-Raspberry Pi Pico is a microcontroller board based on the **RP2040 chip**. It features:  
-- Dual-core ARM Cortex-M0+ processor  
-- 26 multi-function GPIO pins  
-- Supports **MicroPython** and **C/C++**  
-- Interfaces like **I2C, SPI, UART, and PWM**  
-- Low power consumption, ideal for **IoT applications**  
+<img width="1293" height="744" alt="image" src="https://github.com/user-attachments/assets/3c04afa6-1517-45d2-88f1-e671d9ed1ffb" />
+
+ ### FIGURE-01 RASPI PI 4 PINOUT DIAGRAM: 
+
+The Raspberry Pi 4 Model B is built around a Broadcom BCM2711 system-on-chip that integrates a quad-core ARM Cortex-A72 (64-bit) CPU, VideoCore VI GPU, memory controller, and peripheral interfaces, forming a compact yet complete computer architecture where the SoC connects internally to RAM, USB 3.0 controller, Gigabit Ethernet, HDMI display, and wireless modules. Its 40-pin GPIO header provides a flexible pin configuration consisting of power pins (5 V and 3.3 V), multiple ground pins, and general-purpose input/output pins that operate at 3.3 V logic and can be programmed for digital I/O or alternate functions. Key alternate functions include I²C (SDA, SCL) for sensor communication, SPI (MOSI, MISO, SCLK, CS) for high-speed peripheral interfacing, UART (TX, RX) for serial communication, and PWM for control applications.  For communication, I2C (SDA, SCL), SPI (MOSI, MISO, SCK), and UART (TX, RX) interfaces are mapped across different GPIO pins, allowing seamless connectivity with sensors and peripherals. All GPIO pins support PWM (Pulse Width Modulation), making it useful for motor control, LED brightness adjustment, and sound applications. The BOOTSEL button enables USB mass storage mode for firmware flashing, while the DEBUG pins (SWD interface) provide debugging capabilities. With its low power consumption, flexible GPIO options, and rich interface support, the Raspberry Pi Pico is widely used for IoT, embedded systems, robotics, and automation projects.This architecture and pin multiplexing allow the Raspberry Pi 4 to act as both a general-purpose computing platform and an embedded controller, supporting rapid prototyping, hardware interfacing, and IoT applications.
+
+
+The Internet of Things (IoT) allows devices to communicate and exchange data over the internet. In this experiment, Raspberry Pi 4 acts as the central processing unit that reads input signals from sensors and communicates with the Blynk cloud platform. The IR sensor detects the presence of objects, while the LDR sensor detects the intensity of light. These sensor values are transmitted to the Blynk mobile application for real-time monitoring. Based on the sensor data or manual commands from the Blynk app, Raspberry Pi controls output devices such as an LED, buzzer, and relay through its GPIO pins. This experiment demonstrates remote monitoring and control using IoT technology.
 
 ### **About MPU6050 Sensor:**  
 The **MPU6050** is a **6-Axis Inertial Measurement Unit (IMU)** that includes:  
